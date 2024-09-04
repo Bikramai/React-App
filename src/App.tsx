@@ -1,13 +1,16 @@
 // import Button from "./components/Button";
 // import { BsCalendarCheckFill } from "react-icons/bs";
+// import Like from "./components/Like";
 
-import Like from "./components/Like";
+import Message from "./Message";
 
 
 function App() { 
   return (
     <div>
-      <Like onClick={() => console.log('clicked')}/>
+      <Message />
+      <Message />
+      <Message />
     </div>
   );
 }
