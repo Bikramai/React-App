@@ -5,20 +5,25 @@
 
 import { useState } from "react";
 
-
-function App() { 
-  const [drink, setDrink] = useState({
-    title: "Lemanade", 
-    price: 5,
+function App() {
+  const [customer, setCustomer] = useState({
+    name: "Bikram",
+    address: {
+      city: "Cleveland",
+      zipCode: 44310,
+    },
   });
 
-  const handleClick = () => {  //updating Objects
-    setDrink({ ...drink, price: 6 });
-  }; 
+  const handleClick = () => {
+    //updating Nested Objects
+    setCustomer({
+      ...customer,
+      address: { ...customer.address, zipCode: 44322 },
+    });
+  };
 
   return (
     <div>
-      {drink.price}
       <button onClick={handleClick}>Click Me</button>
     </div>
   );
