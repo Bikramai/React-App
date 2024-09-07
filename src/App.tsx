@@ -6,20 +6,17 @@
 import { useState } from "react";
 
 function App() {
-  const [customer, setCustomer] = useState({
-    name: "Bikram",
-    address: {
-      city: "Cleveland",
-      zipCode: 44310,
-    },
-  });
+  const [tags, setTags] = useState(['happy', 'cheerful']);
 
   const handleClick = () => {
-    //updating Nested Objects
-    setCustomer({
-      ...customer,
-      address: { ...customer.address, zipCode: 44322 },
-    });
+    // Add
+    setTags([ ...tags, 'exciting']);
+
+    // Remove
+    setTags(tags.filter(tag => tag !== 'happy'));
+
+    // Update
+    setTags(tags.map(tag => tag === 'happy' ? 'happiness' : tag))
   };
 
   return (
